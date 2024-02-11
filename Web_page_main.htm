@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Interface</title>
+    <link rel="stylesheet" type="text/css" href="css_file.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ML Model Interface</h1>
+        <div class="form">
+            <input id="inputData" type="text" placeholder="Enter data...">
+            <button onclick="predict()">Predict</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function predict() {
+            var inputData = document.getElementById('inputData').value;
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({data: inputData})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.result;
+            });
+        }
+    </script>
+
+</body>
+</html>
