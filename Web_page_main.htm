@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud and Phishing Email Checker</title>
+    <link rel="stylesheet" type="text/css" href="css_file.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fraud and Phishing Email Checker</h1>
+        <div class="form">
+            <input id="emailSubject" type="text" placeholder="Enter email subject...">
+            <textarea id="emailBody" placeholder="Enter email body..." rows="6"></textarea>
+            <button onclick="predict()">Predict</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="java_backend.js"></script>
+</body>
+</html>
